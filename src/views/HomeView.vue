@@ -1,27 +1,38 @@
 <template>
-  <div class="home">
-    
-    <div>
-      <button @click="decreaseCounter" class="btn">-</button>
-      <span class="counter">{{ counter }}</span>
-      <button @click="increaseCounter" class="btn">+</button>
-    </div>
+	<div class="home">
+		<div>
+			<button @click="decreaseCounter" class="btn">-</button>
+			<span class="counter">{{ counter }}</span>
+			<button @click="increaseCounter" class="btn">+</button>
+		</div>
 
-  </div>
+		<div class="edit">
+			<input v-model="counter" v-autofocus />
+		</div>
+	</div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+	import { ref } from "vue";
 
-const counter = ref(0)
+	const counter = ref(0);
 
-const increaseCounter = () => {
-  counter.value++
-}
+	const increaseCounter = () => {
+		counter.value++;
+	};
 
-const decreaseCounter = () => {
-  counter.value--
-}
+	const decreaseCounter = () => {
+		counter.value--;
+	};
+
+	// Directives Start
+	const vAutofocus = {
+		mounted: (el) => {
+			el.focus();
+		},
+	};
+
+	// Directives End
 </script>
 
 <!--
@@ -71,12 +82,13 @@ export default {
 -->
 
 <style>
-.home {
-  text-align: center;
-  padding: 20px;
-}
-.btn, .counter {
-  font-size: 40px;
-  margin: 10px;
-}
+	.home {
+		text-align: center;
+		padding: 20px;
+	}
+	.btn,
+	.counter {
+		font-size: 40px;
+		margin: 10px;
+	}
 </style>
