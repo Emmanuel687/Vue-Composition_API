@@ -14,6 +14,7 @@
 
 <script setup>
 	import { ref } from "vue";
+	import { vAutofocus } from "../directives/vAutoFocus";
 
 	const counter = ref(0);
 
@@ -24,15 +25,6 @@
 	const decreaseCounter = () => {
 		counter.value--;
 	};
-
-	// Directives Start
-	const vAutofocus = {
-		mounted: (el) => {
-			el.focus();
-		},
-	};
-
-	// Directives End
 </script>
 
 <!--
