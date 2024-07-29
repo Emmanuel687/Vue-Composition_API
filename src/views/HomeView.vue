@@ -8,6 +8,13 @@
       <button @click="increaseCounter" class="btn">+</button>
     </div>
 
+    <!-- New -->
+    <div>
+      <button @click="decreaseCounter" class="btn">-</button>
+      <span class="counter">{{ counter }}</span>
+      <button @click="increaseCounter" class="btn">+</button>
+    </div>
+
   </div>
 </template>
 
